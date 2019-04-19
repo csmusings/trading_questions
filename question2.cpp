@@ -42,7 +42,6 @@ double main_loop(int number_complete_games){
     for (int i = 0; i < number_complete_games; i++){
         percent_one += one_round();
     }
-    percent_one += .35;
     return (double)percent_one/(double)number_complete_games;
 }
 
