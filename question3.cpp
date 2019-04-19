@@ -1,4 +1,3 @@
-
 #include <string>
 #include <chrono>
 #include <vector>
@@ -8,16 +7,14 @@
 #include <sstream>
 #include <iostream>
 #include <memory>
-#include <fstream>
 #include <cmath>
-#include <map>
 #include <algorithm>
 #include <random>
 #include <vector>
-#include <list>
 #define M 5
 #define N 5
 using namespace std;
+//used this tutorial https://www.topcoder.com/community/competitive-programming/tutorials/assignment-problem-and-hungarian-algorithm/
 
 //True if bipartite matching found
 bool find_b_matching(int b_graph[M][N], int u, vector<bool> seen, vector<int> matched_right);
@@ -35,8 +32,7 @@ void init_graph(int b_graph[M][N]){
     }
 
 }
-
-//desgined to return the total value but does run in fast enough
+//desgined to return the total value but does run fast enough. Calls maximum bipartite method - similar to Ford Fulkerson, and also uses approximation for minimum vertex cover. 
 int calc_max_possible_value(int left_max_positive, int left_min_location, int favint[M][N], int b_graph[M][N]) {
     int maxMatches = 0;
     while (maxMatches < M + N) {
@@ -110,6 +106,8 @@ int calc_max_possible_value(int left_max_positive, int left_min_location, int fa
             }
         }
     }
+//return answer once found
+return 1;
 }
 
 int main()
